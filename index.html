@@ -75,10 +75,6 @@
 			
 				<li><a href="/" target="_blank">主页</a></li>
 			
-				<li><a href="https://zhousiwei.gitee.io/ibooks/" target="_blank">技术笔记</a></li>
-			
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/" target="_blank">随笔</a></li>
-			
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -145,10 +141,6 @@
 			
 				
 			
-				
-			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -168,14 +160,10 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 70%">
+				<ul style="width: 50%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
-		        
-					<li style="width: 33.333333333333336%"><a target="_blank" rel="noopener" href="https://zhousiwei.gitee.io/ibooks/">技术笔记</a></li>
-		        
-					<li style="width: 33.333333333333336%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 100%"><a href="/">主页</a></li>
 		        
 				</ul>
 			</nav>
@@ -223,126 +211,11 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p>在此之前，需下载安装并配置好git</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;xxx&quot;</span><br><span class="line">git config --global user.name &quot;xxx&quot;</span><br></pre></td></tr></table></figure>
-
-<p>否则之后步骤会发生错误</p>
-<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>首先安装 <code>Node.js</code></p>
-<p>浏览器输入<code>nodejs.org</code>，直接下载最新版的 <strong>LTS安装包</strong> ，安装过程直接默认选项即可。</p>
-<p>里面包含两个组件，一个是Node.js本身，另一个是npm包管理器，</p>
-<h3 id="检查Node-js是否安装成功"><a href="#检查Node-js是否安装成功" class="headerlink" title="检查Node.js是否安装成功"></a>检查Node.js是否安装成功</h3><p>打开终端</p>
-<p>Linux，需要切换到root用户下</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure>
-
-<p>Windows，打开cmd</p>
-<p>查看Node.js版本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
-
-<p>查看npm版本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-
-<p>国内镜像源的速度很慢，所以要借助npm来安装一个淘宝的包管理工具cnpm</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-
-<p><code>-g</code>表示全局安装</p>
-<p>查看cnpm版本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm -v</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="基于Node-js，安装hexo框架"><a href="#基于Node-js，安装hexo框架" class="headerlink" title="基于Node.js，安装hexo框架"></a>基于Node.js，安装hexo框架</h3><p>通过cnpm来全局安装hexo博客框架</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p>查看hexo版本(可以看到hexo是基于node.js的)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="开始操作hexo"><a href="#开始操作hexo" class="headerlink" title="开始操作hexo"></a>开始操作hexo</h2><h3 id="新建blog文件夹"><a href="#新建blog文件夹" class="headerlink" title="新建blog文件夹"></a>新建blog文件夹</h3><p>新建一个文件夹，命名为blog，接下来的操作都将在这个blog中完成</p>
-<p>所以，如果搭建博客的过程中，发生问题，直接删掉这个文件夹，接下来的步骤重来即可</p>
-<p><strong>进入blog文件夹，在blog文件夹中打开终端</strong></p>
-<h3 id="初始化hexo"><a href="#初始化hexo" class="headerlink" title="初始化hexo"></a>初始化hexo</h3><p>hexo会从github中将框架克隆clone拉到本地，默认主题是landscape）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-
-<p>若输出显示</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO Start blogging with Hexo!</span><br></pre></td></tr></table></figure>
-
-<p>表示hexo初始化完成</p>
-<h3 id="启动hexo本地服务器"><a href="#启动hexo本地服务器" class="headerlink" title="启动hexo本地服务器"></a>启动hexo本地服务器</h3><p>启动hexo服务器，s表示server</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<p>启动成功后，就可以在浏览器中输入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:4000/</span><br></pre></td></tr></table></figure>
-
-<p>即可看见在本地4000端口，启动的hexo个人博客</p>
-<h3 id="停止hexo"><a href="#停止hexo" class="headerlink" title="停止hexo"></a>停止hexo</h3><p>在终端中，停止hexo</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ctrl + C</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="新建博客内容"><a href="#新建博客内容" class="headerlink" title="新建博客内容"></a>新建博客内容</h3><p>接下来，开始新建博客内容，n表示new</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;我的第一篇博客&quot;</span><br></pre></td></tr></table></figure>
-
-<p>新建完成后，可以在blog\source\_posts文件下新建的markdown文件，其名为“我的第一篇博客”</p>
-<p>你可以手动打开这个md文件，并以markdown的语法进行写作</p>
-<h3 id="发布博客新内容"><a href="#发布博客新内容" class="headerlink" title="发布博客新内容"></a>发布博客新内容</h3><p>写作完成后，<strong>在blog文件夹下打开终端</strong></p>
-<p>首先，清理缓存文件、数据库</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-
-<p>然后，生成静态文件，g表示generate</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">或者</span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<p>再次启动hexo</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<p>到此，本地部署已完成</p>
-<h2 id="部署远端服务器"><a href="#部署远端服务器" class="headerlink" title="部署远端服务器"></a>部署远端服务器</h2><p>接下来，要将博客部署到远端去，从而使别人任何人都能访问</p>
-<h3 id="新建GitHub库"><a href="#新建GitHub库" class="headerlink" title="新建GitHub库"></a>新建GitHub库</h3><p>在自己的GitHub账号内，新建一个新的仓库，仓库命名必须为【GitHub的昵称.github.io】</p>
-<p>例如，mike.github.io（后续博客网址就是这个）</p>
-<h3 id="安装hexo-deployer-git，并配置"><a href="#安装hexo-deployer-git，并配置" class="headerlink" title="安装hexo-deployer-git，并配置"></a>安装hexo-deployer-git，并配置</h3><p>在blog文件夹下，打开终端，现在安装hexo-deployer-git</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-
-<p>安装成功后，需要对blog文件下的<code>_config.yml</code>配置文件进行修改，用txt的形式打开即可</p>
-<p>在该文件内的最底下，对<code># Deployment</code>下的内容进行修改</p>
-<ul>
-<li><p>repo为你新建的仓库地址</p>
-</li>
-<li><p>type若出现单引号，删去即可</p>
-</li>
-<li><p>冒号后需要空格</p>
-</li>
-</ul>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">原本内容如下：</span><br><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/one-command-deployment</span><br><span class="line">deploy: </span><br><span class="line">  type: &#x27;&#x27;</span><br><span class="line"></span><br><span class="line">现改为：</span><br><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/one-command-deployment</span><br><span class="line">deploy: </span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/mike/mike.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<p>修改完成后，保存退出</p>
-<h3 id="部署到远端服务器"><a href="#部署到远端服务器" class="headerlink" title="部署到远端服务器"></a>部署到远端服务器</h3><p>接下来，即可将个人博客部署到远端服务器</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br><span class="line">或者</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<p>此时若没有配置好git，会报failed find git之类的错</p>
-<p>则重新安装</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-
-<p>并配置好git即可</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;xxx&quot;</span><br><span class="line">git config --global user.name &quot;xxx&quot;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="后续使用hexo的只需4步"><a href="#后续使用hexo的只需4步" class="headerlink" title="后续使用hexo的只需4步"></a>后续使用hexo的只需4步</h2><h3 id="1-新建博客内容，编写并保存md文件"><a href="#1-新建博客内容，编写并保存md文件" class="headerlink" title="1. 新建博客内容，编写并保存md文件"></a>1. 新建博客内容，编写并保存md文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;我的博客&quot;</span><br><span class="line"></span><br><span class="line">以下可以在本地先浏览一下效果</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-清理hexo数据库"><a href="#2-清理hexo数据库" class="headerlink" title="2. 清理hexo数据库"></a>2. 清理hexo数据库</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-生成静态文件"><a href="#3-生成静态文件" class="headerlink" title="3. 生成静态文件"></a>3. 生成静态文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-部署远端服务器"><a href="#4-部署远端服务器" class="headerlink" title="4. 部署远端服务器"></a>4. 部署远端服务器</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">一键部署</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="查看博客"><a href="#查看博客" class="headerlink" title="查看博客"></a>查看博客</h2><p><a target="_blank" rel="noopener" href="https://yourgithubname.github.io/">https://YourGithubName.github.io/</a> </p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
-<li>由于众所周知的问题，GitHub有时并不能流畅访问，所以部署服务器的步骤可能会出错，可以将个人博客部署到码云gitee上，这里暂不予以展示步骤，可自行研究，或者用魔法¯\<em>(ツ)</em>&#x2F;¯</li>
-<li>此教程是通过学习该网址而总结的自我学习的笔记<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty?from=search&seid=4534527322977386784&spm_id_from=333.337.0.0">手把手教你从0开始搭建自己的个人博客 |无坑版视频教程| hexo_哔哩哔哩_bilibili</a></li>
-</ul>
-
+    <p>一直以来都很想要一个个人博客网站，现在终于实现了！<br>虽然是通过hexo框架，连接GitHub的服务器，直接略过了学习前端后端的步骤<br>但是首先取得可见的个人博客网站效果，将极大的激发了自我学习开发的信心。</p>
+<p>而且整个步骤非常简单且快速，30分钟内即可见效，快来试试看吧！</p>
+    
+    <a class="article-more-a" href="/2022/02/24/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88hexo%EF%BC%89/#more">more >></a>
+    
     
 
     
@@ -514,20 +387,10 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+    <p>hexo 初次生成的教程文件<br>在这里保留下来，不做删除处理</p>
+    
+    <a class="article-more-a" href="/2022/02/23/hello-world/#more">more >></a>
+    
     
 
     
@@ -701,11 +564,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">blog</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">blog</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>
@@ -762,17 +625,17 @@
                 
                   <img src="https://zhousiwei.gitee.io/ibooks/favicon.ico">
                 
-                技术笔记
+                試毅-思伟 技术笔记
               </a>
             </li>
           
             <li class="search-li">
-              <a href="https://github.com/JoeyBling" target="_blank" 
+              <a href="https://github.com/kainhuck" target="_blank" 
                 class="search-title" >
                 
                   <i class="icon-link icon"></i>
                 
-                GitHub
+                GitHub of kainhuck
               </a>
             </li>
           
@@ -782,17 +645,7 @@
                 
                   <i class="icon-link icon"></i>
                 
-                码云
-              </a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://www.jianshu.com/u/02cbf31a043a" target="_blank" 
-                class="search-title" >
-                
-                  <i class="icon-link icon"></i>
-                
-                简书
+                Gitee of zhousiwei
               </a>
             </li>
           
@@ -881,6 +734,35 @@
   </div>
 
   
+<script type="text/javascript" src="/plugins/TweenMax/TweenMax.min.js"></script>
+<script type="text/javascript" src="/plugins/TweenMax/HoverImg.js"></script>
+
+<script>
+
+
+  var hoverEffect = {
+    "subNav": ".left-col .social a"
+  }
+
+
+  for (var x in hoverEffect) {
+    // 初始化data-img属性值
+    let $em = document.querySelectorAll(hoverEffect[x]);
+    $em.forEach(($a) => {
+      //console.log($a.href);
+      if (isImageType($a.href)) {
+        $a.setAttribute("data-img", $a.href)
+      }
+    })
+    // 实现悬停元素预览图片效果
+    let $a = document.querySelectorAll(hoverEffect[x] + "[data-img]");
+    $a.forEach(($em) => {
+      new HoverImgFx1($em)
+    })
+  }
+
+</script>
+
   
 <script type="text/javascript" src="/plugins/activate-power-mode/activate-power-mode.js"></script>
 <script>
